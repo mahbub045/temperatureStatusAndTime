@@ -60,8 +60,7 @@ void setup() {
   if (!rtc.begin()) {
     Serial.println("Couldn't find RTC");
     Serial.flush();
-    while (1)
-      ;
+    while (1);
   }
 
   if (rtc.lostPower()) {
@@ -160,17 +159,17 @@ void loop() {
   }
   ///////////////////////////////////////
   if (Temperature <= 25) {
-    tempPosition = "     COLD       ";
+    tempPosition = "------COLD------";
   } else if (Temperature >= 26 && Temperature <= 30) {
-    tempPosition = "  NORMAL COLD   ";
+    tempPosition = "---NORMAL COLD--";
   } else if (Temperature >= 31 && Temperature <= 37) {
     tempPosition = "-----NORMAL-----";
   } else if (Temperature >= 38 && Temperature <= 40) {
-    tempPosition = "      HOT       ";
+    tempPosition = "-------HOT------";
   } else if (Temperature >= 41 && Temperature <= 43) {
     tempPosition = "---EXTREME HOT--";
   } else if (Temperature >= 44) {
-    tempPosition = "  PRAIRIE FIRE  ";
+    tempPosition = "--PRAIRIE FIRE--";
   }
   //////////////////////////////////////
 }
